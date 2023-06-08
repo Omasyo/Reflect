@@ -218,3 +218,26 @@ fun Modifier.animateConstraints() = composed {
         }
     }
 }
+
+//
+//    .nestedScroll(object : NestedScrollConnection {
+//        fun onScroll(available: Offset): Offset {
+//            val newOffset = offset + available.y
+//            offset = MathUtils.clamp(newOffset, 0f, 500f)
+//            val excess = newOffset - offset
+//
+//            return Offset(0f, available.y - excess)
+//        }
+//
+//        override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
+//            return if (available.y > 0) Offset.Zero else onScroll(available)
+//        }
+//
+//        override fun onPostScroll(
+//            consumed: Offset,
+//            available: Offset,
+//            source: NestedScrollSource
+//        ): Offset {
+//            return if (available.y < 0) Offset.Zero else onScroll(available)
+//        }
+//    }

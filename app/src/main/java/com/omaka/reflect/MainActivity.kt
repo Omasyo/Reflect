@@ -37,6 +37,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.omaka.reflect.ui.HomeScreen
+import com.omaka.reflect.ui.NoteScreen
 import com.omaka.reflect.ui.SettingsScreen
 import com.omaka.reflect.ui.theme.ReflectTheme
 import kotlinx.coroutines.GlobalScope
@@ -53,16 +54,19 @@ class MainActivity : ComponentActivity() {
         setContent {
             ReflectTheme {
                 val navController = rememberNavController()
-                
-                NavHost(navController = navController, startDestination = "home" ) {
-                    composable("home") { HomeScreen( { navController.navigate("settings") } ) }
-                    composable("settings") { SettingsScreen( {navController.navigate("home")} )}
+
+                NavHost(navController = navController, startDestination = "home") {
+                    composable("home") { HomeScreen(
+                        onNavigateToNote =  { navController.navigate("note") },
+                        onNavigateToSettings =  { navController.navigate("settings") },
+                    ) }
+                    composable("settings") { SettingsScreen { navController.navigate("home") } }
+                    composable("note") { NoteScreen { navController.popBackStack() }}
                 }
             }
         }
     }
 }
-
 
 
 @Preview(showBackground = true)
