@@ -27,7 +27,7 @@ fun NoteCard(
             .height(240.dp)
             .clip(MaterialTheme.shapes.large)
             .background(
-                MaterialTheme.colorScheme.tertiaryContainer
+                MaterialTheme.colorScheme.inverseOnSurface
             )
             .clickable(onClick = onTap)
 //            .ges

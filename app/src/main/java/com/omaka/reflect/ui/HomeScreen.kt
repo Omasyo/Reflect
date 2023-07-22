@@ -48,7 +48,7 @@ fun HomeScreen(
         topBar = {
             Box(
                 Modifier
-                    .background(MaterialTheme.colorScheme.surface)
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
                     .statusBarsPadding()
                     .defaultMinSize(
                         minHeight = 56f.dp
@@ -79,7 +79,7 @@ fun HomeScreen(
 
             }
         },
-        containerColor = MaterialTheme.colorScheme.surface,
+        containerColor = MaterialTheme.colorScheme.surfaceVariant,
     ) { innerPadding ->
         var query by remember {
             mutableStateOf("")
@@ -89,7 +89,7 @@ fun HomeScreen(
 
         Box(
             Modifier
-                .background(MaterialTheme.colorScheme.background)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
                 .padding(innerPadding)
         ) {
 

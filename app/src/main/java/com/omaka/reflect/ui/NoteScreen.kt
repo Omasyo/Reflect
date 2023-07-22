@@ -81,10 +81,10 @@ fun NoteScreen(onPop: () -> Unit) {
         Modifier
             .imePadding()
             .navigationBarsPadding(),
+        containerColor = MaterialTheme.colorScheme.inverseOnSurface,
         topBar = {
             Box(
                 Modifier
-                    .background(MaterialTheme.colorScheme.surface)
                     .statusBarsPadding()
                     .defaultMinSize(
                         minHeight = 56f.dp
